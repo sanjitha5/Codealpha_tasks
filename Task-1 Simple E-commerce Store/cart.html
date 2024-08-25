@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Products - zoro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h2 onclick="window.location='index.html'">zoro</h2>
+      </div>
+      <nav>
+        <input placeholder="product name,category name,etc." type="text" name="" id="" />
+        <button>Search</button>
+      </nav>
+      <div class="end">
+        <h3><a href="account.html">login</a></h3>
+        <a href="cart.html"><i class="cart fa fa-shopping-cart"></i></a>
+      </div>
+    </div>
+    <div class="navIndex">
+      <li><a href="index.html">home</a></li>
+      <li><a href="index.html#allPro">All Products</a></li>
+      <li onclick="a()">Women<i class="fa fa-caret-down"></i></li>
+      <ul class="dropDown1">
+        <a href="women.html">all</a>
+        <a href="women.html#womenDre">Dresses</a>
+        <a href="women.html#womenPan">pants</a>
+        <a href="women.html#womenskirt">Skirts</a>
+      </ul>
+      <li onclick="b()">men<i class="fa fa-sort-down"></i></li>
+      <div class="dropDown2">
+        <a href="men.html">all</a>
+        <a href="men.html#menDre">Shirt</a>
+        <a href="men.html#menPan">pants</a>
+        <a href="men.html#menHoo">Hoodies</a>
+      </div>
+      <li><a href="kids.html">kids</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </div>
+  </div>
+
+  <!-- Cart Items Details -->
+  <div class="small-container cart-page">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img
+              src="https://rukminim1.flixcart.com/image/660/792/xif0q/kurta/1/h/g/m-pw333-purshottam-wala-original-imag8zf6ybkmhehy-bb.jpeg?q=50"
+              alt="" />
+            <div>
+              <p>Women Maxi Blue Dress</p>
+              <small>Price: ₹640.00</small>
+              <br />
+              <i class="fa fa-trash"></i>
+            </div>
+          </div>
+        </td>
+        <td class="TDE">
+          <button onclick="dec() ,fun1()">-</button>
+          <input id="num" type="nunber" value="0" />
+          <button onclick="inc() ,fun2()">+</button>
+        </td>
+        <td id="subtotal">₹00.00</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img
+              src="https://rukminim1.flixcart.com/image/660/792/kmax8y80/shirt/v/q/i/xl-4m-shirt-bkt007-4metik-style-original-imagf8mzpauy5hyf.jpeg?q=50"
+              alt="" />
+            <div>
+              <p>Men Slim Fit Solid Slim Collar</p>
+              <small>Price: ₹499.00</small>
+              <br />
+              <i class="fa fa-trash"></i>
+            </div>
+          </div>
+        </td>
+        <td class="TDE">
+          <button onclick="decone() ,fun1()">-</button>
+          <input id="num1" type="nunber" value="0" />
+          <button onclick="incone() ,fun2()">+</button>
+        </td>
+
+        <td id="subtotal1">₹00.00</td>
+      </tr>
+
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img
+              src="https://assets0.mirraw.com/images/10513569/B8429692----------------------_long_webp.webp?1656389067"
+              alt="" />
+            <div>
+              <p>Everwillow Kids Blue Gown</p>
+              <small>Price: ₹890.00</small>
+              <br />
+              <i class="fa fa-trash"></i>
+            </div>
+          </div>
+        </td>
+        <td class="TDE">
+          <button onclick="dec2(), fun1()">-</button>
+          <input id="num2" type="nunber" value="0" />
+          <button onclick="inc2() ,fun2()">+</button>
+        </td>
+
+        <td id="subtotal2">₹00.00</td>
+      </tr>
+    </table>
+
+    <div class="total-price">
+      <table>
+        <tr>
+          <td>Subtotal</td>
+          <td id="sub">₹00.00</td>
+        </tr>
+        <tr>
+          <td>Shipping</td>
+          <td>₹100.00</td>
+        </tr>
+        <tr>
+          <td>Total</td>
+          <td id="total">₹00.00</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Women</h3>
+          <ul>
+            <li onclick="window.location='/women.html#womenDre'">Dresses</li>
+            <li onclick="window.location='/women.html#womenPan'">pants</li>
+            <li onclick="window.location='/women.html#womenskirt'">Skirts</li>
+          </ul>
+        </div>
+        <div class="footer-col-2">
+          <h3>men</h3>
+          <ul>
+            <li onclick="window.location='/men.html#menDre'">shirt</li>
+            <li onclick="window.location='/men.html#menPan'">pants</li>
+            <li onclick="window.location='/men.html#menHoo'">Hoodies</li>
+          </ul>
+        </div>
+        <div class="footer-col-3">
+          <h3 onclick="window.location='/kids.html'">kids</h3>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+
+        <div class="footer-col-4">
+          <h3>links</h3>
+          <ul>
+            <li onclick="window.location='index.html'">Home</li>
+            <li onclick="window.location='/account.html'">Login</li>
+            <li onclick="window.location='/contact.html'">Contact</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <p class="copyright">Copyright 2022 - zoro</p>
+    </div>
+  </div>
+  <!-- JS  -->
+  <script>
+    var s = 0;
+    var subtotal = document.getElementById("subtotal");
+    var sub = document.getElementById("sub");
+    var total = document.getElementById("total");
+    var math;
+    var fString;
+    var s1 = 0;
+    var subtotal1 = document.getElementById("subtotal1");
+    var math1;
+    var fString1;
+    var s2 = 0;
+    var subtotal2 = document.getElementById("subtotal2");
+    var math2;
+    var fString2;
+    function inc() {
+      s++;
+      document.getElementById("num").value = s;
+      math = s * 640;
+      fString = "₹" + math + ".00";
+      subtotal.innerHTML = fString;
+    }
+    function dec() {
+      if (document.getElementById("num").value > 0) {
+        --s;
+        document.getElementById("num").value = s;
+
+        math = math - 640;
+        fString = "₹" + math + ".00";
+        subtotal.innerHTML = fString;
+      }
+    }
+    function a() {
+      document.querySelector(".dropDown1").classList.toggle("ss");
+    }
+    function b() {
+      document.querySelector(".dropDown2").classList.toggle("ww");
+    }
+    function incone() {
+      s1++;
+      document.getElementById("num1").value = s1;
+      math1 = s1 * 499;
+      fString1 = "₹" + math1 + ".00";
+      subtotal1.innerHTML = fString1;
+    }
+    function decone() {
+      if (document.getElementById("num1").value > 0) {
+        --s1;
+        document.getElementById("num1").value = s1;
+
+        math1 = math1 - 499;
+        fString1 = "₹" + math1 + ".00";
+        subtotal1.innerHTML = fString1;
+      }
+    }
+    function inc2() {
+      s2++;
+      document.getElementById("num2").value = s2;
+      math2 = s2 * 890;
+      fString2 = "₹" + math2 + ".00";
+      subtotal2.innerHTML = fString2;
+    }
+    function dec2() {
+      if (document.getElementById("num2").value > 0) {
+        --s2;
+        document.getElementById("num2").value = s2;
+
+        math2 = math2 - 890;
+        fString2 = "₹" + math2 + ".00";
+        subtotal2.innerHTML = fString2;
+      }
+    }
+
+    function fun1() {
+      // -     
+      var gg = math - math1 - math2;
+      var wee = gg;
+      sub.innerHTML = "₹" + gg + ".00";
+      total.innerHTML = "₹" + wee + ".00";
+
+    }
+    function fun2() {
+      //+
+      var gg = math + math1 + math2;
+      var wee = gg + 100;
+      sub.innerHTML = "₹" + gg + ".00";
+      total.innerHTML = "₹" + wee + ".00";
+    }
+  </script>
+</body>
+
+</html>

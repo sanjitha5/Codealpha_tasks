@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Create a New Post</h2>
+        <form id="post-form">
+            <div class="form-group">
+                <label for="post-name">Post Name</label>
+                <input type="text" class="form-control" id="post-name" required>
+            </div>
+            <div class="form-group">
+                <label for="post-description">Post Description</label>
+                <textarea class="form-control" id="post-description" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="post-image">Upload Image</label>
+                <input type="file" class="form-control-file" id="post-image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to convert image file to base64 string
+        function convertToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = error => reject(error);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Form submission handler
+        document.getElementById('post-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('post-name').value;
+            const description = document.getElementById('post-description').value;
+            const imageFile = document.getElementById('post-image').files[0];
+
+            if (!imageFile) return;
+
+            const imageBase64 = await convertToBase64(imageFile);
+
+            const newPost = {
+                name,
+                description,
+                image: imageBase64,
+                timestamp: new Date().toISOString(),// Save the timestamp of the upload
+                
+            };
+
+            // Retrieve existing posts from localStorage
+            const posts = JSON.parse(localStorage.getItem('posts')) || [];
+            posts.push(newPost);
+
+            // Save updated posts to localStorage
+            localStorage.setItem('posts', JSON.stringify(posts));
+
+            // Redirect back to the main page
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
